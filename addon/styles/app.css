@@ -7,22 +7,23 @@
   display: inline-block;
 }
 
-.header {
+.ember-spreadsheet .header {
   white-space: nowrap;
   min-height: 31px;
 }
 
-.header .padded-space {
+.ember-spreadsheet .header .padded-space {
   position: absolute;
   left: 0px;
   background-color: white;
   height: 31px;
-  /*width: $ label-margin+40;*/
+  z-index: 10;
+  width: 110px;
 }
 
-.header .start-position {
+.ember-spreadsheet .header .start-position {
   position: absolute;
-  left: 362px;  /* needs to vary */
+  left: 110px;
 }
 
 .left-side {
@@ -39,4 +40,8 @@
 
 .row {
   height: 20px;
+}
+
+.right-side .row {
+  width: 600px;
 }

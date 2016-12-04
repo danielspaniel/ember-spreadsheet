@@ -55,7 +55,7 @@ export default Ember.Component.extend({
   scrollChangeRight(e) {
     let verticalScroll = e.currentTarget.scrollTop;
     let horizontalScroll = e.currentTarget.scrollLeft;
-    Ember.$('.spreadsheet-labels .column-rows').css('left', 362 - horizontalScroll);
+    this.$('.header .start-position').css('left', 110 - horizontalScroll);
     if (this.leftSideList.scrollTop() !== verticalScroll) {
       this.leftSideList.scrollTop(verticalScroll);
     }

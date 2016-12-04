@@ -1,0 +1,14 @@
+<div class="spreadsheet-container">
+  <tr>
+    <td class="collection left-side">
+      {{#vertical-collection content=leftItems as |item|}}
+        {{component leftSideComponent item=item}}
+      {{/vertical-collection}}
+    </td>
+    <td class="collection right-side">
+      {{#vertical-collection content=rightItems as |item|}}
+        {{component rightSideComponent item=item}}
+      {{/vertical-collection}}
+    </td>
+  </tr>
+</div>
