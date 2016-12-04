@@ -1,0 +1,14 @@
+<div class="spreadsheet-container">
+  <tr>
+    <td>
+      {{#ember-collection class="collection left-side" cell-layout=(fixed-grid-layout 100 20) items=leftItems as |item index|}}
+        {{component leftSideComponent item=item}}
+      {{/ember-collection}}
+    </td>
+    <td>
+      {{#ember-collection class="collection right-side" cell-layout=(fixed-grid-layout 400 20) items=rightItems as |item index|}}
+        {{component rightSideComponent item=item}}
+      {{/ember-collection}}
+    </td>
+  </tr>
+</div>

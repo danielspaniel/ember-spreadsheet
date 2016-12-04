@@ -2,6 +2,7 @@
   "name": "ember-spreadsheet",
   "dependencies": {
     "ember": "~2.10.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "jquery.nicescroll": "3.6.8"
   }
 }

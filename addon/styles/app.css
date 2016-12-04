@@ -1,0 +1,24 @@
+.ember-spreadsheet .spreadsheet-container {
+  color: red;
+}
+
+.ember-spreadsheet .collection {
+  position: relative;
+  display: inline-block
+}
+
+.left-side {
+  background: #ddd;
+  width: 100px;
+  height: 200px
+}
+
+.right-side {
+  background: #cac;
+  width: 400px;
+  height: 200px
+}
+
+.row {
+  height: 20px;
+}

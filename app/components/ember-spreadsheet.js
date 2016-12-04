@@ -1,0 +1,1 @@
+export { default } from 'ember-spreadsheet/components/ember-spreadsheet';
