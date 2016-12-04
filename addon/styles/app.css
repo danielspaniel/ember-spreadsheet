@@ -4,13 +4,31 @@
 
 .ember-spreadsheet .collection {
   position: relative;
-  display: inline-block
+  display: inline-block;
+}
+
+.header {
+  white-space: nowrap;
+  min-height: 31px;
+}
+
+.header .padded-space {
+  position: absolute;
+  left: 0px;
+  background-color: white;
+  height: 31px;
+  /*width: $ label-margin+40;*/
+}
+
+.header .start-position {
+  position: absolute;
+  left: 362px;  /* needs to vary */
 }
 
 .left-side {
   background: #ddd;
   width: 100px;
-  height: 200px
+  height: 200px;
 }
 
 .right-side {
