@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
-    "ember-cli-htmlbars": "^1.0.10"
+    "ember-cli-htmlbars": "^1.0.10",
+    "ember-collection": "1.0.0-alpha.7"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -31,7 +32,6 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-collection": "1.0.0-alpha.7",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
