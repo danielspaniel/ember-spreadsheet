@@ -10,7 +10,7 @@
       {{/ember-collection}}
     </td>
     <td>
-      {{#ember-collection class="collection right-side" cell-layout=(fixed-grid-layout 400 20) items=rightItems as |item index|}}
+      {{#ember-collection class="collection right-side" cell-layout=(fixed-grid-layout nullWidth 20) items=rightItems as |item index|}}
         {{component rightSideComponent item=item}}
       {{/ember-collection}}
     </td>
