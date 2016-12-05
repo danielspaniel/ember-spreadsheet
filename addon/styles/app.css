@@ -18,17 +18,14 @@
   background-color: white;
   height: 31px;
   z-index: 10;
-  width: 110px;
 }
 
 .ember-spreadsheet .header .start-position {
   position: absolute;
-  left: 110px;
 }
 
 .left-side {
   background: #ddd;
-  width: 100px;
   height: 200px;
 }
 
@@ -44,4 +41,9 @@
 
 .right-side .row {
   width: 600px;
+}
+.data { height: 20px; }
+.data .column {
+  display: inline-block;
+  width: 100px;
 }

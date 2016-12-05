@@ -7,6 +7,7 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
+    this.headerSetup();
     this.scrollSetup();
   },
 
@@ -19,8 +20,11 @@ export default Ember.Component.extend({
     this.rightSideList.niceScroll('destroy');
   },
 
-  resizeOnTrigger: function() {
-//    this.setListSize();
+  headerSetup: function() {
+    let leftWidth = this.get('leftWidth');
+    Ember.$('.header .padded-space').css({width: leftWidth + 10 });
+    Ember.$('.header .start-position').css({left: leftWidth + 10 });
+    Ember.$('.left-side').css({width: leftWidth});
   },
 
   leftSideList: null,
