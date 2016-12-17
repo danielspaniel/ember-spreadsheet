@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   nullWidth: null,
+  headerLeft: "Base10",
+  itemHeight: 27,
   leftWidth: 100,
   leftItems: Array(100).fill().map((_, i)=>i),
   leftSideComponent: 'left-row',

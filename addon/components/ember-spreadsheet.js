@@ -4,6 +4,8 @@ import layout from '../templates/ember-spreadsheet';
 export default Ember.Component.extend({
   layout,
   classNames: ['ember-spreadsheet'],
+  itemCount: Ember.computed.reads('rightItems.length'),
+  columns: [100],
 
   didInsertElement() {
     this._super(...arguments);
@@ -13,8 +15,8 @@ export default Ember.Component.extend({
 
   willDestroyElement: function() {
     this._super(...arguments);
-    this.$('.left-side div:first').off('scroll, touchmove');
-    this.$('.right-side div:first').off('scroll, touchmove');
+    this.$('.left .collection div:first').off('scroll, touchmove');
+    this.$('.right .collection div:first').off('scroll, touchmove');
 
     this.leftSideList.niceScroll('destroy');
     this.rightSideList.niceScroll('destroy');
@@ -22,19 +24,19 @@ export default Ember.Component.extend({
 
   headerSetup: function() {
     let leftWidth = this.get('leftWidth');
-    Ember.$('.header .padded-space').css({width: leftWidth + 10 });
-    Ember.$('.header .start-position').css({left: leftWidth + 10 });
-    Ember.$('.left-side').css({width: leftWidth});
+    Ember.$('.header .left-column').css({width: leftWidth + 10 });
+    Ember.$('.header .right-columns').css({left: leftWidth + 10 });
+    Ember.$('.left .collection').css({width: leftWidth});
   },
 
   leftSideList: null,
   rightSideList: null,
 
   scrollSetup: function() {
-    if (!this.$('.left-side div:first')[0]) { return; }
-    if (!this.$('.left-side div:first').data('hasScrollSetup')) {
-      this.leftSideList = this.$('.left-side div:first');
-      this.rightSideList = this.$('.right-side div:first');
+    if (!this.$('.left .collection div:first')[0]) { return; }
+    if (!this.$('.left .collection div:first').data('hasScrollSetup')) {
+      this.leftSideList = this.$('.left .collection div:first');
+      this.rightSideList = this.$('.right .collection div:first');
 
       this.leftSideList.on('scroll', this.scrollChangeLeft.bind(this)).data('hasScrollSetup', true);
       this.rightSideList.on('scroll', this.scrollChangeRight.bind(this)).data('hasScrollSetup', true);
@@ -59,7 +61,7 @@ export default Ember.Component.extend({
   scrollChangeRight(e) {
     let verticalScroll = e.currentTarget.scrollTop;
     let horizontalScroll = e.currentTarget.scrollLeft;
-    this.$('.header .start-position').css('left', 110 - horizontalScroll);
+    this.$('.header .right-columns').css('left', 110 - horizontalScroll);
     if (this.leftSideList.scrollTop() !== verticalScroll) {
       this.leftSideList.scrollTop(verticalScroll);
     }
@@ -76,9 +78,8 @@ export default Ember.Component.extend({
   setListWidth() {
     let width = this.widthCalculation();
     if (width) {
-      Ember.$('.collection.right-side').width(width);
+      Ember.$('.right .collection').width(width);
     }
-  },
+  }
 
-  
 });
