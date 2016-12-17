@@ -1,6 +1,18 @@
 <div class="header">
-  <div class="left-column">{{headerLeft}}</div>
-  <div class="right-columns">{{component headerComponent}}</div>{
+  <div class="left-column">
+    {{#if leftHeaderComponent}}
+      {{component leftHeaderComponent}}
+    {{else}}
+      {{yield (hash isLeftHeader=true)}}
+    {{/if}}
+  </div>
+  <div class="right-columns">
+    {{#if rightHeaderComponent}}
+      {{component rightHeaderComponent}}
+    {{else}}
+      {{yield (hash isRightHeader=true)}}
+    {{/if}}
+  </div>
 </div>
 <div class="spreadsheet-container">
   <tr>
