@@ -6,12 +6,20 @@
   <tr>
     <td class="left">
       {{#ember-collection class="collection" cell-layout=(fixed-grid-layout leftWidth itemHeight) items=leftItems as |item index|}}
-        {{component leftSideComponent item=item}}
+        {{#if leftSideComponent}}
+          {{component leftSideComponent item=item}}
+        {{else}}
+          {{yield (hash isLeftSideItem=true item=item index=index)}}
+        {{/if}}
       {{/ember-collection}}
     </td>
     <td class="right">
       {{#ember-collection class="collection" cell-layout=(percentage-columns-layout itemCount columns itemHeight) items=rightItems as |item index|}}
-        {{component rightSideComponent item=item}}
+        {{#if rightSideComponent}}
+          {{component rightSideComponent item=item}}
+        {{else}}
+          {{yield (hash isRightSideItem=true item=item index=index)}}
+        {{/if}}
       {{/ember-collection}}
     </td>
   </tr>
