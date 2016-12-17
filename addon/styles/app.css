@@ -1,5 +1,6 @@
 .ember-spreadsheet .spreadsheet-container {
   color: red;
+  border-collapse: collapse;
 }
 
 .ember-spreadsheet .collection {
@@ -12,7 +13,7 @@
   min-height: 31px;
 }
 
-.ember-spreadsheet .header .padded-space {
+.ember-spreadsheet .header .left-column {
   position: absolute;
   left: 0px;
   background-color: white;
@@ -20,30 +21,55 @@
   z-index: 10;
 }
 
-.ember-spreadsheet .header .start-position {
+.ember-spreadsheet .header .right-columns {
   position: absolute;
 }
 
-.left-side {
+.ember-spreadsheet td.right {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.left {
   background: #ddd;
+}
+
+.left .collection {
   height: 200px;
 }
 
-.right-side {
+.right {
   background: #cac;
-  width: 400px;
+  height: 200px
+}
+
+.right .collection {
+  width: 100%;
   height: 200px
 }
 
 .row {
-  height: 20px;
+  height: 27px;
+  border-bottom: 1px solid gray;
 }
 
-.right-side .row {
+.right .row {
   width: 600px;
 }
-.data { height: 20px; }
+
+.left .row {
+  width: 100px;
+}
+
+.data {
+  height: 25px;
+}
+
 .data .column {
   display: inline-block;
   width: 100px;
+}
+
+.right .row .data .column {
+  border-right: 1px solid gray;
 }

@@ -1,16 +1,16 @@
 <div class="header">
-  <div class="padded-space"></div>
-  <div class="start-position">{{component headerComponent}}</div>
+  <div class="left-column">{{headerLeft}}</div>
+  <div class="right-columns">{{component headerComponent}}</div>{
 </div>
 <div class="spreadsheet-container">
   <tr>
-    <td>
-      {{#ember-collection class="collection left-side" cell-layout=(fixed-grid-layout 100 20) items=leftItems as |item index|}}
+    <td class="left">
+      {{#ember-collection class="collection" cell-layout=(fixed-grid-layout leftWidth itemHeight) items=leftItems as |item index|}}
         {{component leftSideComponent item=item}}
       {{/ember-collection}}
     </td>
-    <td>
-      {{#ember-collection class="collection right-side" cell-layout=(fixed-grid-layout nullWidth 20) items=rightItems as |item index|}}
+    <td class="right">
+      {{#ember-collection class="collection" cell-layout=(percentage-columns-layout itemCount columns itemHeight) items=rightItems as |item index|}}
         {{component rightSideComponent item=item}}
       {{/ember-collection}}
     </td>
