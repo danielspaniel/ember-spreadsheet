@@ -1,8 +1,31 @@
 {
   "name": "ember-spreadsheet",
+  "authors": [
+    "Daniel Sudol <dansudol@yahoo.com>",
+    "Tristan Goffman <trisrael@altschool.net>"
+  ],
+  "main": "dist/ember-spreadsheet.js",
+  "keywords": [
+    "Spreadsheet",
+    "Ember"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "blueprints",
+    "bower.json",
+    "package.json",
+    "README.md",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "ember": "~2.10.0",
-    "ember-cli-shims": "0.1.3",
     "jquery.nicescroll": "3.6.8"
+  },
+  "devDependencies": {
+    "ember": "2.10.2",
+    "ember-cli-shims": "0.1.3"
   }
 }
