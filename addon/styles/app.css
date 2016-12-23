@@ -1,6 +1,4 @@
 .ember-spreadsheet .spreadsheet-container {
-  color: red;
-  border-collapse: collapse;
 }
 
 .ember-spreadsheet .collection {
@@ -8,12 +6,12 @@
   display: inline-block;
 }
 
-.ember-spreadsheet .header {
+.ember-spreadsheet .spreadsheet-header {
   white-space: nowrap;
   min-height: 31px;
 }
 
-.ember-spreadsheet .header .left-column {
+.ember-spreadsheet .spreadsheet-header .left-column {
   position: absolute;
   left: 0px;
   background-color: white;
@@ -21,55 +19,62 @@
   z-index: 10;
 }
 
-.ember-spreadsheet .header .right-columns {
+.ember-spreadsheet .spreadsheet-header .right-columns {
   position: absolute;
 }
 
-.ember-spreadsheet td.right {
+.ember-spreadsheet td.right-side {
   border-collapse: collapse;
   width: 100%;
 }
 
-.left {
+.ember-spreadsheet .right-side .collection {
+  width: 100%;
+}
+
+/* dummy application */
+.sample.sheet.one {
+  position:relative; width: 100%;
+}
+
+.sample.sheet.one .ember-spreadsheet .left-side {
   background: #ddd;
 }
 
-.left .collection {
+.sample.sheet.one .ember-spreadsheet .left-side .collection {
   height: 200px;
 }
 
-.right {
-  background: #cac;
-  height: 200px
+.sample.sheet.one .ember-spreadsheet .right-side {
+  background-color: #cac;
 }
 
-.right .collection {
-  width: 100%;
-  height: 200px
+.sample.sheet.one .ember-spreadsheet .right-side .collection {
+  height: 200px;
 }
 
-.row {
+.sample.sheet.one .ember-spreadsheet .row {
   height: 27px;
   border-bottom: 1px solid gray;
 }
 
-.right .row {
+.sample.sheet.one .ember-spreadsheet .right-side .row {
   width: 600px;
 }
 
-.left .row {
+.sample.sheet.one .ember-spreadsheet .left-side .row {
   width: 100px;
 }
 
-.data {
+.sample.sheet.one .ember-spreadsheet .data {
   height: 25px;
 }
 
-.data .column {
+.sample.sheet.one .ember-spreadsheet .data .column {
   display: inline-block;
   width: 100px;
 }
 
-.right .row .data .column {
+.sample.sheet.one .ember-spreadsheet .right-side .row .data .column {
   border-right: 1px solid gray;
 }

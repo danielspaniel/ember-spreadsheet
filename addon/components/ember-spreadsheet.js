@@ -15,8 +15,8 @@ export default Ember.Component.extend({
 
   willDestroyElement: function() {
     this._super(...arguments);
-    this.$('.left .collection div:first').off('scroll');
-    this.$('.right .collection div:first').off('scroll');
+    this.$('.left-side .collection div:first').off('scroll');
+    this.$('.right-side .collection div:first').off('scroll');
 
     this.leftSideList.niceScroll('destroy');
     this.rightSideList.niceScroll('destroy');
@@ -24,19 +24,19 @@ export default Ember.Component.extend({
 
   headerSetup: function() {
     let leftWidth = this.get('leftWidth');
-    Ember.$('.header .left-column').css({width: leftWidth + 10 });
-    Ember.$('.header .right-columns').css({left: leftWidth + 10 });
-    Ember.$('.left .collection').css({width: leftWidth});
+    Ember.$('.spreadsheet-header .left-column').css({width: leftWidth + 10 });
+    Ember.$('.spreadsheet-header .right-columns').css({left: leftWidth + 10 });
+    Ember.$('.left-side .collection').css({width: leftWidth});
   },
 
   leftSideList: null,
   rightSideList: null,
 
   scrollSetup: function() {
-    if (!this.$('.left .collection div:first')[0]) { return; }
-    if (!this.$('.left .collection div:first').data('hasScrollSetup')) {
-      this.leftSideList = this.$('.left .collection div:first');
-      this.rightSideList = this.$('.right .collection div:first');
+    if (!this.$('.left-side .collection div:first')[0]) { return; }
+    if (!this.$('.left-side .collection div:first').data('hasScrollSetup')) {
+      this.leftSideList = this.$('.left-side .collection div:first');
+      this.rightSideList = this.$('.right-side .collection div:first');
 
       this.leftSideList.on('scroll', this.scrollChangeLeft.bind(this)).data('hasScrollSetup', true);
       this.rightSideList.on('scroll', this.scrollChangeRight.bind(this)).data('hasScrollSetup', true);
@@ -61,7 +61,7 @@ export default Ember.Component.extend({
   scrollChangeRight(e) {
     let verticalScroll = e.currentTarget.scrollTop;
     let horizontalScroll = e.currentTarget.scrollLeft;
-    this.$('.header .right-columns').css('left', 110 - horizontalScroll);
+    this.$('.spreadsheet-header .right-columns').css('left', 110 - horizontalScroll);
     if (this.leftSideList.scrollTop() !== verticalScroll) {
       this.leftSideList.scrollTop(verticalScroll);
     }

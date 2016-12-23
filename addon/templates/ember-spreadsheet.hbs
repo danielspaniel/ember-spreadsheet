@@ -1,4 +1,4 @@
-<div class="header">
+<div class="spreadsheet-header">
   <div class="left-column">
     {{#if leftHeaderComponent}}
       {{component leftHeaderComponent}}
@@ -16,7 +16,7 @@
 </div>
 <div class="spreadsheet-container">
   <tr>
-    <td class="left">
+    <td class="left-side">
       {{#ember-collection class="collection" cell-layout=(fixed-grid-layout leftWidth itemHeight) items=leftItems as |item index|}}
         {{#if leftSideComponent}}
           {{component leftSideComponent item=item}}
@@ -25,7 +25,7 @@
         {{/if}}
       {{/ember-collection}}
     </td>
-    <td class="right">
+    <td class="right-side">
       {{#ember-collection class="collection" cell-layout=(percentage-columns-layout itemCount columns itemHeight) items=rightItems as |item index|}}
         {{#if rightSideComponent}}
           {{component rightSideComponent item=item}}

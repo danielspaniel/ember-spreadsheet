@@ -1,16 +1,17 @@
-{{#ember-spreadsheet
-  itemHeight=itemHeight
-  leftWidth=leftWidth
+<div class="sample sheet one">
+  {{#ember-spreadsheet
+    itemHeight=itemHeight
+    leftWidth=leftWidth
 
-  leftHeaderComponent=leftHeaderComponent
-  leftItems=leftItems
+    leftHeaderComponent=leftHeaderComponent
+    leftItems=leftItems
 
-  rightHeaderComponent=rightHeaderComponent
-  rightItems=rightItems
-  rightSideComponent=rightSideComponent
-
-   as |hash|}}
-  {{#if hash.isLeftSideItem}}
-    {{left-row item=hash.item}}
-  {{/if}}
-{{/ember-spreadsheet}}
+    rightHeaderComponent=rightHeaderComponent
+    rightItems=rightItems
+    rightSideComponent=rightSideComponent
+  as |hash|}}
+    {{#if hash.isLeftSideItem}}
+      {{left-row item=hash.item}}
+    {{/if}}
+  {{/ember-spreadsheet}}
+</div>
