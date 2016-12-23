@@ -15,8 +15,8 @@ export default Ember.Component.extend({
 
   willDestroyElement: function() {
     this._super(...arguments);
-    this.$('.left .collection div:first').off('scroll, touchmove');
-    this.$('.right .collection div:first').off('scroll, touchmove');
+    this.$('.left .collection div:first').off('scroll');
+    this.$('.right .collection div:first').off('scroll');
 
     this.leftSideList.niceScroll('destroy');
     this.rightSideList.niceScroll('destroy');
@@ -64,21 +64,6 @@ export default Ember.Component.extend({
     this.$('.header .right-columns').css('left', 110 - horizontalScroll);
     if (this.leftSideList.scrollTop() !== verticalScroll) {
       this.leftSideList.scrollTop(verticalScroll);
-    }
-  },
-
-  heightCalculation: function() {
-    return Ember.$('.container-wrapper').height() - 70;
-  },
-
-  widthCalculation: function() {
-    return Ember.$('.container-wrapper').width() - 370;
-  },
-
-  setListWidth() {
-    let width = this.widthCalculation();
-    if (width) {
-      Ember.$('.right .collection').width(width);
     }
   }
 
