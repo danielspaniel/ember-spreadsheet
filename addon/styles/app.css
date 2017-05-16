@@ -11,7 +11,7 @@
   min-height: 31px;
 }
 
-.ember-spreadsheet .spreadsheet-header .left-column {
+.ember-spreadsheet .spreadsheet-header .left-side {
   position: absolute;
   left: 0px;
   background-color: white;
@@ -19,7 +19,7 @@
   z-index: 10;
 }
 
-.ember-spreadsheet .spreadsheet-header .right-columns {
+.ember-spreadsheet .spreadsheet-header .right-side {
   position: absolute;
 }
 
@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-.ember-spreadsheet .right-side .collection {
+.ember-spreadsheet td.right-side .collection {
   width: 100%;
 }
 
@@ -37,19 +37,19 @@
   position:relative; width: 100%;
 }
 
-.sample.sheet.one .ember-spreadsheet .left-side {
+.sample.sheet.one .ember-spreadsheet td.left-side {
   background: #ddd;
 }
 
-.sample.sheet.one .ember-spreadsheet .left-side .collection {
+.sample.sheet.one .ember-spreadsheet td.left-side .collection {
   height: 200px;
 }
 
-.sample.sheet.one .ember-spreadsheet .right-side {
+.sample.sheet.one .ember-spreadsheet td.right-side {
   background-color: #cac;
 }
 
-.sample.sheet.one .ember-spreadsheet .right-side .collection {
+.sample.sheet.one .ember-spreadsheet td.right-side .collection {
   height: 200px;
 }
 
@@ -58,11 +58,11 @@
   border-bottom: 1px solid gray;
 }
 
-.sample.sheet.one .ember-spreadsheet .right-side .row {
+.sample.sheet.one .ember-spreadsheet td.right-side .row {
   width: 600px;
 }
 
-.sample.sheet.one .ember-spreadsheet .left-side .row {
+.sample.sheet.one .ember-spreadsheet td.left-side .row {
   width: 100px;
 }
 
@@ -75,6 +75,6 @@
   width: 100px;
 }
 
-.sample.sheet.one .ember-spreadsheet .right-side .row .data .column {
+.sample.sheet.one .ember-spreadsheet td.right-side .row .data .column {
   border-right: 1px solid gray;
 }

@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   classNames: ['ember-spreadsheet'],
   itemCount: Ember.computed.reads('rightItems.length'),
   columns: [100],
+  paddingLeft: 2,
 
   didInsertElement() {
     this._super(...arguments);
@@ -24,8 +25,8 @@ export default Ember.Component.extend({
 
   headerSetup: function() {
     let leftWidth = this.get('leftWidth');
-    Ember.$('.spreadsheet-header .left-column').css({width: leftWidth + 10 });
-    Ember.$('.spreadsheet-header .right-columns').css({left: leftWidth + 10 });
+    Ember.$('.spreadsheet-header .left-side').css({width: leftWidth + this.paddingLeft });
+    Ember.$('.spreadsheet-header .right-side').css({left: leftWidth + this.paddingLeft });
     Ember.$('.left-side .collection').css({width: leftWidth});
   },
 
@@ -61,7 +62,8 @@ export default Ember.Component.extend({
   scrollChangeRight(e) {
     let verticalScroll = e.currentTarget.scrollTop;
     let horizontalScroll = e.currentTarget.scrollLeft;
-    this.$('.spreadsheet-header .right-columns').css('left', 110 - horizontalScroll);
+    let leftWidth = this.get('leftWidth') + this.paddingLeft;
+    this.$('.spreadsheet-header .right-side').css('left', leftWidth - horizontalScroll);
     if (this.leftSideList.scrollTop() !== verticalScroll) {
       this.leftSideList.scrollTop(verticalScroll);
     }

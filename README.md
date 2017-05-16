@@ -1,6 +1,12 @@
 # ember-spreadsheet
 
-This README outlines the details of collaborating on this Ember addon.
+WHY?
+
+- It's kind of painful to build a spreadsheet ( in ember or otherwise )
+- Ember Table was not using ember 2.0 .. and was too much cruft
+
+DEMO
+ - Check it out [here](danielspaniel.github.io/ember-spreadsheet)
 
 ## Installation
 
