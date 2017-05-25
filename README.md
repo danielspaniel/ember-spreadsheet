@@ -6,7 +6,7 @@ WHY?
 - Ember Table was not using ember 2.0 .. and was too much cruft
 
 DEMO
- - Check it out [here](danielspaniel.github.io/ember-spreadsheet)
+ - Check it out [here](https://danielspaniel.github.io/ember-spreadsheet)
 
 ## Installation
 
