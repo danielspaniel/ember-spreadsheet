@@ -1,8 +1,10 @@
 {
   "name": "ember-spreadsheet",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Create an ember spreadsheet with very little effort",
   "keywords": [
+    "ember.js",
+    "spreadsheet",
     "ember-addon"
   ],
   "license": "MIT",
@@ -43,6 +45,7 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
+    "main": "index.js",
     "configPath": "tests/dummy/config",
     "demoUrl": "https://danielspaniel.github.io/ember-spreadsheet"
   }
